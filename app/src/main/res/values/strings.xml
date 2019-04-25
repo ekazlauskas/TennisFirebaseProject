@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tennis Firebase Project</string>
+    <string name="tennis_match_progress">Tennis Match Progress</string>
+    <string name="add_match">Add Match</string>
+    <string name="delete_match">Delete Match</string>
+    <string name="match_details">Match Details</string>
+    <string name="css_tennis_logo">CSS Tennis Logo</string>
+</resources>

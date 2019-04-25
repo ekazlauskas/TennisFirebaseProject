@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "941349698430",
+    "firebase_url": "https://tennisfirebaseproject.firebaseio.com",
+    "project_id": "tennisfirebaseproject",
+    "storage_bucket": "tennisfirebaseproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:941349698430:android:30ea5cf1a5972aea",
+        "android_client_info": {
+          "package_name": "css.tennisfirebaseproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "941349698430-2u8f3mh4iffkhslae2aohuhmch9qel4u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "css.tennisfirebaseproject",
+            "certificate_hash": "11ded000ce4bd830ff5fa28dfea16dde4d23e9d7"
+          }
+        },
+        {
+          "client_id": "941349698430-488ge6infnpr5kvif40c90uus7p3ci45.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjxuq_2B19Ori9pw0w9slHF7T8MXnOEuo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "941349698430-488ge6infnpr5kvif40c90uus7p3ci45.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
