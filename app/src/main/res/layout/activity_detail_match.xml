@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_match"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetailMatchActivity">
+
+    <TextView
+        android:id="@+id/textViewDetailTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/please_enter_match_information" />
+
+    <TextView
+        android:id="@+id/textViewDetailOpponent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/opponent_played" />
+
+    <EditText
+        android:id="@+id/editTextDetailOpponent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/opponent"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textViewDetailMatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/please_enter_match_placement" />
+
+    <EditText
+        android:id="@+id/editTextDetailMatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/_1_singles_etc"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textViewDetailPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/please_enter_player_s_who_played_in_match" />
+
+    <EditText
+        android:id="@+id/editTextDetailPlayer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/player_name"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textViewScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/please_enter_match_score" />
+
+    <EditText
+        android:id="@+id/editTextScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/score"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textViewDetailDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/please_enter_date" />
+
+    <EditText
+        android:id="@+id/editTextDetailDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/date"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back" />
+</LinearLayout>

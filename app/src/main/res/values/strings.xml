@@ -5,4 +5,27 @@
     <string name="delete_match">Delete Match</string>
     <string name="match_details">Match Details</string>
     <string name="css_tennis_logo">CSS Tennis Logo</string>
+    <string name="please_enter_match_information">Please Enter Match Information</string>
+    <string name="opponent_played">Opponent Played</string>
+    <string name="opponent">Opponent</string>
+    <string name="please_enter_match_placement">Please Enter Match Placement</string>
+    <string name="please_enter_player_s_who_played_in_match">Please Enter Player(s) who played in match</string>
+    <string name="player_name">Player Name</string>
+    <string name="please_enter_match_score">Please Enter Match Score</string>
+    <string name="score">Score</string>
+    <string name="save_match">Save Match</string>
+    <string name="please_enter_date">Please Enter Date</string>
+    <string name="date">Date</string>
+    <string name="please_enter_match_information">Please Enter Match Information</string>
+    <string name="opponent">Opponent</string>
+    <string name="opponent_played">Opponent Played</string>
+    <string name="please_enter_match_placement">Please Enter Match Placement</string>
+    <string name="_1_singles_etc">1 Singles, etc.</string>
+    <string name="please_enter_player_s_who_played_in_match">Please Enter Player(s) who played in match</string>
+    <string name="player_name">Player Name</string>
+    <string name="please_enter_match_score">Please Enter Match Score</string>
+    <string name="score">Score</string>
+    <string name="please_enter_date">Please Enter Date</string>
+    <string name="date">Date</string>
+    <string name="back">Back</string>
 </resources>
