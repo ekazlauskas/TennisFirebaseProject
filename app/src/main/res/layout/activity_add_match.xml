@@ -38,7 +38,7 @@
         android:id="@+id/spinnerPlacement"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="1 Doubles, 2 Doubles, 3 Doubles, 1 Singles, 2 Singles, 3 Singles, 4 Singles, 5 Singles, 6 Singles"
+        android:entries="@array/match_placement"
         android:spinnerMode="dropdown" />
 
     <TextView

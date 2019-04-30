@@ -16,16 +16,17 @@
     <string name="save_match">Save Match</string>
     <string name="please_enter_date">Please Enter Date</string>
     <string name="date">Date</string>
-    <string name="please_enter_match_information">Please Enter Match Information</string>
-    <string name="opponent">Opponent</string>
-    <string name="opponent_played">Opponent Played</string>
-    <string name="please_enter_match_placement">Please Enter Match Placement</string>
     <string name="_1_singles_etc">1 Singles, etc.</string>
-    <string name="please_enter_player_s_who_played_in_match">Please Enter Player(s) who played in match</string>
-    <string name="player_name">Player Name</string>
-    <string name="please_enter_match_score">Please Enter Match Score</string>
-    <string name="score">Score</string>
-    <string name="please_enter_date">Please Enter Date</string>
-    <string name="date">Date</string>
     <string name="back">Back</string>
+    <string-array name="match_placement">
+        <item> 1-Doubles </item>
+        <item> 2-Doubles </item>
+        <item> 3-Doubles </item>
+        <item> 1-Singles </item>
+        <item> 2-Singles </item>
+        <item> 3-Singles </item>
+        <item> 4-Singles </item>
+        <item> 5-Singles </item>
+        <item> 6-Singles </item>
+    </string-array>
 </resources>

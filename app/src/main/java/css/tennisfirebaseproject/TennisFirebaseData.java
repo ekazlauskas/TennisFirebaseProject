@@ -1,4 +1,5 @@
 package css.tennisfirebaseproject;
 
-public class TennisFirebaseData {
+public class TennisFirebaseData { {
+    }
 }

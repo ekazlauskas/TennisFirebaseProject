@@ -26,53 +26,60 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTitle"
         tools:layout_editor_absoluteX="8dp" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/buttonAdd"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/ListViewMatches"
-        tools:layout_editor_absoluteX="8dp">
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="@string/add_match"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ListViewMatches" />
 
-        <Button
-            android:id="@+id/buttonAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/add_match" />
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="@string/delete_match"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAdd" />
 
-        <Button
-            android:id="@+id/buttonDelete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/delete_match" />
-
-        <Button
-            android:id="@+id/buttonDetails"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/match_details" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/buttonDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:text="@string/match_details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDelete" />
 
     <ImageView
         android:id="@+id/imageViewCSS"
-        android:layout_width="158dp"
-        android:layout_height="194dp"
-        android:layout_marginStart="124dp"
+        android:layout_width="203dp"
+        android:layout_height="229dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="68dp"
         android:contentDescription="@string/css_tennis_logo"
         android:cropToPadding="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.016"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.887"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDetails"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@mipmap/css_tennis" />
 
 </android.support.constraint.ConstraintLayout>
