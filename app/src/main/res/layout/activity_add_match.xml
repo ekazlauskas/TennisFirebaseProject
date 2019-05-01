@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/date"
-        android:inputType="date" />
+        android:inputType="text" />
 
     <Button
         android:id="@+id/buttonSave"

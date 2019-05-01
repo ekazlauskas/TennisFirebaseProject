@@ -3,7 +3,6 @@
     <string name="tennis_match_progress">Tennis Match Progress</string>
     <string name="add_match">Add Match</string>
     <string name="delete_match">Delete Match</string>
-    <string name="match_details">Match Details</string>
     <string name="css_tennis_logo">CSS Tennis Logo</string>
     <string name="please_enter_match_information">Please Enter Match Information</string>
     <string name="opponent_played">Opponent Played</string>
@@ -17,7 +16,6 @@
     <string name="please_enter_date">Please Enter Date</string>
     <string name="date">Date</string>
     <string name="_1_singles_etc">1 Singles, etc.</string>
-    <string name="back">Back</string>
     <string-array name="match_placement">
         <item> 1-Doubles </item>
         <item> 2-Doubles </item>

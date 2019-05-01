@@ -15,16 +15,16 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
-        Button btnAdd, btnDelete, btnDetails;
-        ListView ListViewMatches;
-        ArrayAdapter<Tennis> tennisMatchAdapter;
-        List<Tennis> tennisList;
-        DatabaseReference myTennisDbRef;
-        TennisFirebaseData tennisDataSource;
-        TennisMatch tennisSelected;
-
+    Button btnAdd, btnDelete, btnDetails;
+    ListView ListViewMatches;
+    ArrayAdapter<TennisMatch> tennisMatchAdapter;
+    List<TennisMatch> tennisList;
+    DatabaseReference myTennisDbRef;
+    FirebaseDatabase tennisDataSource;
 
 
     @Override
@@ -32,28 +32,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        createFirebaseDataChange();
+        createAddMatchButton();
+
+
         // Write a message to the database
-        //FirebaseDatabase database = FirebaseDatabase.getInstance();
-        //DatabaseReference myRef = database.getReference("Welcome to Tennis Tracker");
-
-    }
-
-    //This class is designed to help the app data update in real time, this will help
-    //coaches and the head of athletic communications see the results of
-    //matches so that they can update the CSS website.
-    private void createFirebaseDataChange(){
-        tennisDataSource = new TennisFirebaseData();
-        myTennisDbRef = tennisDataSource.open();
+        tennisDataSource = FirebaseDatabase.getInstance(); //Gets instance for Google Firebase
+        myTennisDbRef = tennisDataSource.getReference("Tennis Matches");
         myTennisDbRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(DataSnapshot ds) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 Log.d("CISMOBILE", "Initalizing onDataChange()");
-                tennisList = tennisDataSource.getallTennisMatch(dataSnapshot);
-                tennisMatchAdapter = new TennisMatchAdapter(MainActivity.this, android.R.layout.simple_list_item_single_choice, tennisList);
-                ListViewMatches.setAdapter(tennisMatchAdapter);
+                for (DataSnapshot tennisSnapshot : ds.getChildren()) {
+                    TennisMatch value = tennisSnapshot.getValue(TennisMatch.class);
+                    tennisList.add(value);
+                }
+
+                //tennisMatchAdapter = new TennisMatchAdapter(MainActivity.this, android.R.layout.simple_list_item_single_choice, tennisList);
+                //ListViewMatches.setAdapter(tennisMatchAdapter);
             }
 
             @Override
@@ -64,21 +61,27 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
     //This class is designed to set up the Add Match button on the Mainactivity
     //so that the user of the application can go to the Add Match Screen to add match details
     //for the current match being played.
-    private void createAddMatchButton(){
+    private void createAddMatchButton() {
         //Sets up the button to add a match to the MainActivity using a separate activity
         btnAdd = findViewById(R.id.buttonAdd);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Starts the Intent to go to the add match activity
-                Intent detailAddIntent = new Intent(view.getcontext(), AddMatchActivity.class);
+                //Starts Intent to go to the add match activity
+                Intent detailActIntent = new Intent(v.getContext(), AddMatchActivity.class);
                 finish();
-                startActivity(detailAddIntent);
-            }}};
-;
+                startActivity(detailActIntent);
             }
+        });
     }
+}
+
+
+
+
+
 
