@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,12 +21,13 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btnAdd, btnDelete, btnDetails;
-    ListView ListViewMatches;
+    Button btnAdd, btnDelete;
+    ListView ListViewMatch;
     ArrayAdapter<TennisMatch> tennisMatchAdapter;
     List<TennisMatch> tennisList;
     DatabaseReference myTennisDbRef;
     FirebaseDatabase tennisDataSource;
+    int positionSelected;
 
 
     @Override
@@ -33,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         createAddMatchButton();
+        createDeleteButton();
+        //createListView();
 
 
         // Write a message to the database
@@ -50,16 +55,27 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 //tennisMatchAdapter = new TennisMatchAdapter(MainActivity.this, android.R.layout.simple_list_item_single_choice, tennisList);
-                //ListViewMatches.setAdapter(tennisMatchAdapter);
+                //ListViewMatch.setAdapter(tennisMatchAdapter);
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
-                Log.w("CANCEL", "Failed to read value.", error.toException());
+                Log.d("CISMOBILE", "Failed to read value.", error.toException());
             }
         });
     }
+
+    //private void createListView(){
+        //ListViewMatch = findViewById(R.id.ListViewMatches);
+        //ListViewMatch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            //@Override
+          // public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //positionSelected = position;
+                //Log.d("CISMOBILE", "Match selected at position " + positionSelected);
+            //}
+       // });
+   // }
 
 
     //This class is designed to set up the Add Match button on the Mainactivity
@@ -67,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     //for the current match being played.
     private void createAddMatchButton() {
         //Sets up the button to add a match to the MainActivity using a separate activity
-        btnAdd = findViewById(R.id.buttonAdd);
+        btnAdd = (Button) findViewById(R.id.buttonAdd);
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,6 +91,28 @@ public class MainActivity extends AppCompatActivity {
                 Intent detailActIntent = new Intent(v.getContext(), AddMatchActivity.class);
                 finish();
                 startActivity(detailActIntent);
+                //Creates Toast Message when the user clicks on button to send
+                //user to AddMatch Activity
+                Toast toast = Toast.makeText(v.getContext(), "Going to Add Match Screen", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+    }
+
+    private void createDeleteButton(){
+        //Sets up the button that deletes a match from the MainActivity Method
+        btnDelete = (Button) findViewById(R.id.buttonDelete);
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Log.d("CISMOBILE", "Delete pending");
+                Log.d("CISMOBILE", "Delete at position" + positionSelected);
+                //tennisDataSource.deleteTennisMatch(tennisList.get(positionSelected));
+                tennisMatchAdapter.remove(tennisList.get(positionSelected));
+                tennisMatchAdapter.notifyDataSetChanged();
+                //Shows Message telling user that Match was deleted from
+                //list
+                Toast toast = Toast.makeText(v.getContext(), "Deleting Match", Toast.LENGTH_SHORT);
+                toast.show();
             }
         });
     }

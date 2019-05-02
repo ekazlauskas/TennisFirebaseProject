@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".TennisMatchAdapter"></activity>
-        <activity android:name=".AddMatchActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".AddMatchActivity" android:screenOrientation="portrait" />
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

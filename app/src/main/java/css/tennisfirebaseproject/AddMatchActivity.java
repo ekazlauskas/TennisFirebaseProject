@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class AddMatchActivity extends AppCompatActivity {
 
@@ -20,11 +21,11 @@ public class AddMatchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_match);
 
         //Lists all variables found within the Add Match xml file.
-        etOpponent = findViewById(R.id.editTextOpponent);
-        etPlayer = findViewById(R.id.editTextPlayer);
-        etScore = findViewById(R.id.editTextScore);
-        etDate = findViewById(R.id.editTextDate);
-        matchSpinner = findViewById(R.id.spinnerPlacement);
+        etOpponent = (EditText) findViewById(R.id.editTextOpponent);
+        etPlayer = (EditText) findViewById(R.id.editTextPlayer);
+        etScore = (EditText) findViewById(R.id.editTextScore);
+        etDate = (EditText) findViewById(R.id.editTextDate);
+        matchSpinner = (Spinner) findViewById(R.id.spinnerPlacement);
 
         tennisDataSource = new TennisFirebaseData();
         //tennisDataSource.open();
@@ -42,9 +43,30 @@ public class AddMatchActivity extends AppCompatActivity {
                 String date = etDate.getText().toString();
                 //tennisDataSource.createMatch(opponent, placement, player, score, date);
 
+                if (opponent.isEmpty()) {
+                    Toast toast = Toast.makeText(v.getContext(), "ERROR: Please Enter Opponent Name", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                else if (player.isEmpty()) {
+                    Toast toast = Toast.makeText(v.getContext(), "ERROR: Please Enter Player Name", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                else if (score.isEmpty()) {
+                    Toast toast = Toast.makeText(v.getContext(), "ERROR: Please Enter Match Score", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                else if (date.isEmpty()) {
+                    Toast toast = Toast.makeText(v.getContext(), "ERROR: Please Enter Date", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+                else{
+                    //Sends message to user stating that the Match Info is being saved and added
+                    //to ListView
+                    Toast toast = Toast.makeText(v.getContext(), "Saving Match", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
     }
-
-
 }
+
