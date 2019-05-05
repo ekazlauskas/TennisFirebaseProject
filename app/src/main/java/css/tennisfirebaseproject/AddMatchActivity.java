@@ -28,7 +28,7 @@ public class AddMatchActivity extends AppCompatActivity {
         matchSpinner = (Spinner) findViewById(R.id.spinnerPlacement);
 
         tennisDataSource = new TennisFirebaseData();
-        //tennisDataSource.open();
+        tennisDataSource.open();
 
         //sets up Button to save data to Main Activity
         btnAddMatch = findViewById(R.id.buttonSave);

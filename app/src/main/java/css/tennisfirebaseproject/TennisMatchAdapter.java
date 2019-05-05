@@ -26,9 +26,12 @@ public class TennisMatchAdapter extends ArrayAdapter<TennisMatch> {
 
     }
 
-    //Class is designed to view all of the content that is being added with each new match
-    //that is created. This also provides which layout the content should be added to and
-    //what list to display.
+    /**
+     * Class is designed to view all of the content that is being added with each new match
+     * that is created. This also provides which layout the content should be added to and
+     * what list to display.
+     */
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
         //receives the Tennis MAtches that are displaying within the application
@@ -38,12 +41,14 @@ public class TennisMatchAdapter extends ArrayAdapter<TennisMatch> {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         view = inflater.inflate(R.layout.match_layout, null);
 
+        //TextView elements that are assigned within the match_layout xml file.
         TextView tvOpponent = (TextView) view.findViewById(R.id.textViewOpponent);
         TextView tvPlacement = (TextView) view.findViewById(R.id.textViewPlacement);
         TextView tvPlayer = (TextView) view.findViewById(R.id.textViewPlayer);
         TextView tvScore = (TextView) view.findViewById(R.id.textViewScore);
         TextView tvDate = (TextView) view.findViewById(R.id.textViewDate);
 
+        //Sets all text to the textView that was given from the TennisMAtch class
         tvOpponent.setText(tennisMatch.getOpponentPlayed());
         tvPlacement.setText(tennisMatch.getMatchPlacement());
         tvPlayer.setText(tennisMatch.getPlayerPlayed());

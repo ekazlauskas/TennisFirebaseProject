@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         createAddMatchButton();
         createDeleteButton();
-        //createListView();
+        createListView();
 
 
         // Write a message to the database
@@ -66,21 +66,23 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    //private void createListView(){
-        //ListViewMatch = findViewById(R.id.ListViewMatches);
-        //ListViewMatch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            //@Override
-          // public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //positionSelected = position;
-                //Log.d("CISMOBILE", "Match selected at position " + positionSelected);
-            //}
-       // });
-   // }
+    private void createListView(){
+        ListViewMatch = (ListView) findViewById(R.id.ListViewMatches);
+        ListViewMatch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+          public void onItemClick(AdapterView<?> adapter, View parent, int position, long id) {
+                positionSelected = position;
+                Log.d("CISMOBILE", "Match selected at position " + positionSelected);
+            }
+        });
+    }
 
 
-    //This class is designed to set up the Add Match button on the Mainactivity
-    //so that the user of the application can go to the Add Match Screen to add match details
-    //for the current match being played.
+    /**
+     *  This class is designed to set up the Add Match button on the Mainactivity
+     *  so that the user of the application can go to the Add Match Screen to add match details
+     *  for the current match being played.
+     */
+
     private void createAddMatchButton() {
         //Sets up the button to add a match to the MainActivity using a separate activity
         btnAdd = (Button) findViewById(R.id.buttonAdd);
@@ -99,6 +101,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+    /**
+     * Sets up the delete match button where the user can click on a list item individually
+     * and delete them from not only the listView provided within the MainACtivity, but
+     * also the Firebase as well
+     */
     private void createDeleteButton(){
         //Sets up the button that deletes a match from the MainActivity Method
         btnDelete = (Button) findViewById(R.id.buttonDelete);
