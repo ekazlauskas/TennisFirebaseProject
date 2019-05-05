@@ -3,6 +3,7 @@ package css.tennisfirebaseproject;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -39,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         createDeleteButton();
         createListView();
 
+        tennisList = new ArrayList<>();
 
         // Write a message to the database
         tennisDataSource = FirebaseDatabase.getInstance(); //Gets instance for Google Firebase
@@ -54,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
                     tennisList.add(value);
                 }
 
-                //tennisMatchAdapter = new TennisMatchAdapter(MainActivity.this, android.R.layout.simple_list_item_single_choice, tennisList);
-                //ListViewMatch.setAdapter(tennisMatchAdapter);
+                tennisMatchAdapter = new TennisMatchAdapter(MainActivity.this, android.R.layout.simple_list_item_single_choice, tennisList);
+                ListViewMatch.setAdapter(tennisMatchAdapter);
             }
 
             @Override
@@ -97,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 //user to AddMatch Activity
                 Toast toast = Toast.makeText(v.getContext(), "Going to Add Match Screen", Toast.LENGTH_SHORT);
                 toast.show();
+                finish();
             }
         });
     }

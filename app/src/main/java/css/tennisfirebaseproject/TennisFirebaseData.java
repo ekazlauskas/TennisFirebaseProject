@@ -23,21 +23,24 @@ public class TennisFirebaseData {
 
     public TennisMatch createMatch(String opponentPlayed, String matchPlacement, String playerPlayed, String matchScore, String datePlayed) {
     //sets up the new tennis object
-    TennisMatch newTennisMatch = new TennisMatch(opponentPlayed, matchPlacement, playerPlayed, matchScore, datePlayed);
+    String key = myTennisDbRef.child("Tennis Data Tag").push().getKey();
+    TennisMatch newTennisMatch = new TennisMatch(key, opponentPlayed, matchPlacement, playerPlayed, matchScore, datePlayed);
+    myTennisDbRef.child(key).setValue(newTennisMatch);
     return newTennisMatch;
     }
 
-    public void deleteTEnnisMAtch(TennisMatch tennisMatch){
-        myTennisDbRef.removeValue();
+    public void deleteTennisMatch(TennisMatch tennisMatch){
+        String key = tennisMatch.getKey();
+        myTennisDbRef.child(key).removeValue();
     }
 
     public List<TennisMatch> getAllTennisMatch(DataSnapshot dataSnapshot) {
-        List<TennisMatch> tennisMatchList = new ArrayList<TennisMatch>();
+        List<TennisMatch> tennisList = new ArrayList<TennisMatch>();
         for (DataSnapshot data : dataSnapshot.getChildren()){
             TennisMatch tennisMatch = data.getValue(TennisMatch.class);
-            tennisMatchList.add(tennisMatch);
+            tennisList.add(tennisMatch);
         }
-        return tennisMatchList;
+        return tennisList;
     }
 }
 

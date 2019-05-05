@@ -4,19 +4,28 @@ import java.io.Serializable;
 
 public class TennisMatch implements Serializable {
 
+    private String key;
     private String opponentPlayed;
     private String matchPlacement;
     private String playerPlayed;
     private String matchScore;
     private String datePlayed;
 
-    public TennisMatch(String opponentPlayed, String matchPlacement, String playerPlayed, String matchScore, String datePlayed) {
-
+    public TennisMatch(String key, String opponentPlayed, String matchPlacement, String playerPlayed, String matchScore, String datePlayed) {
+        this.key = key;
         this.opponentPlayed = opponentPlayed;
         this.matchPlacement = matchPlacement;
         this.playerPlayed = playerPlayed;
         this.matchScore = matchScore;
         this.datePlayed = datePlayed;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key){
+        this.key = key;
     }
 
     public String getOpponentPlayed() {

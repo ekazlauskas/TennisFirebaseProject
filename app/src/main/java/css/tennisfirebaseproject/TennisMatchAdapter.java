@@ -15,8 +15,8 @@ import java.util.List;
 public class TennisMatchAdapter extends ArrayAdapter<TennisMatch> {
 
     private List<TennisMatch> tennisList; //The list of Tennis Match Information that is displayed
-    private Context context;
-    private int layoutResource;
+    private Context context; //the called activity
+    private int layoutResource; //the layout the application will display
 
     public TennisMatchAdapter(Context context, int resource, List<TennisMatch> tennisList) {
     super(context, resource, tennisList);
@@ -34,7 +34,7 @@ public class TennisMatchAdapter extends ArrayAdapter<TennisMatch> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        //receives the Tennis MAtches that are displaying within the application
+        //receives the Tennis Matches that are displaying within the application
         TennisMatch tennisMatch = tennisList.get(position);
         View view;
 
@@ -48,7 +48,7 @@ public class TennisMatchAdapter extends ArrayAdapter<TennisMatch> {
         TextView tvScore = (TextView) view.findViewById(R.id.textViewScore);
         TextView tvDate = (TextView) view.findViewById(R.id.textViewDate);
 
-        //Sets all text to the textView that was given from the TennisMAtch class
+        //Sets all text to the textView that was given from the TennisMatch class
         tvOpponent.setText(tennisMatch.getOpponentPlayed());
         tvPlacement.setText(tennisMatch.getMatchPlacement());
         tvPlayer.setText(tennisMatch.getPlayerPlayed());

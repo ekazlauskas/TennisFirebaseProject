@@ -1,5 +1,6 @@
 package css.tennisfirebaseproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -65,6 +66,10 @@ public class AddMatchActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(v.getContext(), "Saving Match", Toast.LENGTH_SHORT);
                     toast.show();
                 }
+
+                Intent ResultIntent = new Intent(v.getContext(), MainActivity.class);
+                finish();
+                startActivity(ResultIntent);
             }
         });
     }
