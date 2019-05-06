@@ -20,6 +20,10 @@ public class TennisMatch implements Serializable {
         this.datePlayed = datePlayed;
     }
 
+    public TennisMatch(){
+
+    }
+
     public String getKey() {
         return key;
     }

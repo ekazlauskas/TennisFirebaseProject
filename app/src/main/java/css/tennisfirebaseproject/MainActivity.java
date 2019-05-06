@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Write a message to the database
         tennisDataSource = FirebaseDatabase.getInstance(); //Gets instance for Google Firebase
-        myTennisDbRef = tennisDataSource.getReference("Tennis Matches");
+        myTennisDbRef = tennisDataSource.getReference("TennisDataTag");
         myTennisDbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot ds) {
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 Log.d("CISMOBILE", "Initalizing onDataChange()");
                 for (DataSnapshot tennisSnapshot : ds.getChildren()) {
+                    Log.d ("CISMOBILE", "Retrieving one match");
                     TennisMatch value = tennisSnapshot.getValue(TennisMatch.class);
                     tennisList.add(value);
                 }

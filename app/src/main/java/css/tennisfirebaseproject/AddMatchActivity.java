@@ -42,21 +42,25 @@ public class AddMatchActivity extends AppCompatActivity {
                 String player = etPlayer.getText().toString();
                 String score = etScore.getText().toString();
                 String date = etDate.getText().toString();
-                //tennisDataSource.createMatch(opponent, placement, player, score, date);
+
 
                 if (opponent.isEmpty()) {
+                    //Sends error message to user if opponent field is empty
                     Toast toast = Toast.makeText(v.getContext(), "ERROR: Please Enter Opponent Name", Toast.LENGTH_SHORT);
                     toast.show();
                 }
                 else if (player.isEmpty()) {
+                    //Sends error message to user if player field is empty
                     Toast toast = Toast.makeText(v.getContext(), "ERROR: Please Enter Player Name", Toast.LENGTH_SHORT);
                     toast.show();
                 }
                 else if (score.isEmpty()) {
+                    //Sends error message to user if score field is empty
                     Toast toast = Toast.makeText(v.getContext(), "ERROR: Please Enter Match Score", Toast.LENGTH_SHORT);
                     toast.show();
                 }
                 else if (date.isEmpty()) {
+                    //Sends error message to user if date field is empty
                     Toast toast = Toast.makeText(v.getContext(), "ERROR: Please Enter Date", Toast.LENGTH_SHORT);
                     toast.show();
                 }
@@ -66,6 +70,8 @@ public class AddMatchActivity extends AppCompatActivity {
                     Toast toast = Toast.makeText(v.getContext(), "Saving Match", Toast.LENGTH_SHORT);
                     toast.show();
                 }
+
+                tennisDataSource.createMatch(opponent, placement, player, score, date);
 
                 Intent ResultIntent = new Intent(v.getContext(), MainActivity.class);
                 finish();
