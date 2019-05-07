@@ -47,21 +47,25 @@ public class AddMatchActivity extends AppCompatActivity {
                     //Sends error message to user if opponent field is empty
                     Toast toast = Toast.makeText(v.getContext(), "ERROR: Please Enter Opponent Name", Toast.LENGTH_SHORT);
                     toast.show();
+                    return;
                 }
                 else if (player.isEmpty()) {
                     //Sends error message to user if player field is empty
                     Toast toast = Toast.makeText(v.getContext(), "ERROR: Please Enter Player Name", Toast.LENGTH_SHORT);
                     toast.show();
+                    return;
                 }
                 else if (score.isEmpty()) {
                     //Sends error message to user if score field is empty
                     Toast toast = Toast.makeText(v.getContext(), "ERROR: Please Enter Match Score", Toast.LENGTH_SHORT);
                     toast.show();
+                    return;
                 }
                 else if (date.isEmpty()) {
                     //Sends error message to user if date field is empty
                     Toast toast = Toast.makeText(v.getContext(), "ERROR: Please Enter Date", Toast.LENGTH_SHORT);
                     toast.show();
+                    return;
                 }
                 else{
                     //Sends message to user stating that the Match Info is being saved and added
@@ -70,8 +74,10 @@ public class AddMatchActivity extends AppCompatActivity {
                     toast.show();
                 }
 
+                //creates the tennis match and sends it to the firebase and the listview on the MainActivity
                 tennisDataSource.createMatch(opponent, placement, player, score, date);
 
+                //starts the intent to return the user to the MainActivity Screen
                 Intent ResultIntent = new Intent(v.getContext(), MainActivity.class);
                 finish();
                 startActivity(ResultIntent);

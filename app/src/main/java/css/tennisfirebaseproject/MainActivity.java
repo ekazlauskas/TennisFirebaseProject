@@ -32,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
     int positionSelected;
 
 
+    /**
+     * When the user launches the app, it enables the listview method as well as enables the use of
+     * the add match button and the delete match button. Also, it starts communication with the
+     * Google Firebase.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Creates the listview element on the MainActivity acreen and also lets the user select
+     * a section on the list to delete them (Only can select one at a time).
+     */
     private void createListView(){
         ListViewMatch = (ListView) findViewById(R.id.ListViewMatches);
         ListViewMatch.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -12,12 +12,21 @@ import android.widget.TextView;
 
 import java.util.List;
 
+/**
+ * Creates a tennisMatch adapter that extends from the arrayAdapter with the arrayList.
+ */
 public class TennisMatchAdapter extends ArrayAdapter<TennisMatch> {
 
     private List<TennisMatch> tennisList; //The list of Tennis Match Information that is displayed
     private Context context; //the called activity
     private int layoutResource; //the layout the application will display
 
+    /**\
+     * sets the context, resource, and the list used to their current states for the application.
+     * @param context
+     * @param resource
+     * @param tennisList
+     */
     public TennisMatchAdapter(Context context, int resource, List<TennisMatch> tennisList) {
     super(context, resource, tennisList);
     this.context = context;
@@ -38,6 +47,8 @@ public class TennisMatchAdapter extends ArrayAdapter<TennisMatch> {
         TennisMatch tennisMatch = tennisList.get(position);
         View view;
 
+        //Layout inflater that is used with the created match_layout xml file. Used when displaying
+        //listview method data from the AddMatchActivity class.
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         view = inflater.inflate(R.layout.match_layout, null);
 
@@ -55,6 +66,7 @@ public class TennisMatchAdapter extends ArrayAdapter<TennisMatch> {
         tvScore.setText(tennisMatch.getMatchScore());
         tvDate.setText(tennisMatch.getDatePlayed());
 
+        //returns the view in the MainActivity
         return(view);
     }
 }
