@@ -43,7 +43,6 @@ public class AddMatchActivity extends AppCompatActivity {
                 String score = etScore.getText().toString();
                 String date = etDate.getText().toString();
 
-
                 if (opponent.isEmpty()) {
                     //Sends error message to user if opponent field is empty
                     Toast toast = Toast.makeText(v.getContext(), "ERROR: Please Enter Opponent Name", Toast.LENGTH_SHORT);

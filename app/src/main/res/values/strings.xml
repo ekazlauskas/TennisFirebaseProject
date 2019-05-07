@@ -9,13 +9,13 @@
     <string name="opponent">Opponent</string>
     <string name="please_enter_match_placement">Please Enter Match Placement</string>
     <string name="please_enter_player_s_who_played_in_match">Please Enter Player(s) who played in match</string>
-    <string name="player_name">Player Name</string>
     <string name="please_enter_match_score">Please Enter Match Score</string>
-    <string name="score">Score</string>
     <string name="save_match">Save Match</string>
     <string name="please_enter_date">Please Enter Date</string>
-    <string name="date">Date</string>
     <string name="_1_singles_etc">1 Singles, etc.</string>
+    <string name="mm_dd_yyyy">MM/DD/YYYY</string>
+    <string name="ex_6_0_6_2">Ex: 6-0, 6-2</string>
+    <string name="player_s_name">Player(s) Name</string>
     <string-array name="match_placement">
         <item> 1-Doubles </item>
         <item> 2-Doubles </item>
