@@ -21,6 +21,11 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Author - Elliot Kazlauskas
+ * Date - 5/7/2019
+ * Description - Final Project
+ */
 public class MainActivity extends AppCompatActivity {
 
     Button btnAdd, btnDelete;
